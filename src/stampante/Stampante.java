@@ -7,7 +7,7 @@ import colore.Colour;
 import immagine.*;
 
 public class Stampante {
-	
+	//ciao
 	
 	private Map<Colour, Cartuccia> mappaCartucce = new HashMap<>();
 	private Cartuccia[] arrayDiCartucce; 
