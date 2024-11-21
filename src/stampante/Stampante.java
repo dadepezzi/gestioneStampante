@@ -8,6 +8,7 @@ import immagine.*;
 
 public class Stampante {
 	
+	
 	private Map<Colour, Cartuccia> mappaCartucce = new HashMap<>();
 	private Cartuccia[] arrayDiCartucce; 
 	private int currentCartuccia;
@@ -32,10 +33,18 @@ public class Stampante {
 
 	}
 	
-	public void stampa(Immagine img) { //CAMBIA
+	public void stampa(Printable img) { //CAMBIA
+		//chiede ad immagine quanto consuma per ogni colore
+		//per ogni colore vado da cartuccia e dico consumati
+		//la cartuccia prova a consumarsi (in cartuccia, se finisce colore lancia eccezione)
+		//qui ho try catch che se cartuccia aveva fatto eccezione chiamo cambia cartuccia
+		
+		//se non ho eccezione allora faccio printable.stampa()
+		
+		
 //		img.areaColoreConsumata();
 //		arrayDiCartucce[0].consumaCartuccia(img.getArea(ROSSO));
-//		arrayDiCartucce[1].consumaCartuccia(img.getArea(VERDE));
+//		arrayDiCartucce[1].consumaCartuccia(img.getArea(VERDE)); //non va bene INCAPSULAMENTO
 //		arrayDiCartucce[2].consumaCartuccia(img.getArea(BLU));
 		
 	}
