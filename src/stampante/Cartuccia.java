@@ -20,7 +20,7 @@ public class Cartuccia {
 		this.colore = colore;
 	}
 
-	public void consumaCartuccia(double consumo) {
+	public void consumaCartuccia(double consumo) { //lancio eccezione se finisco colore
 		areaResidua -= consumo;
 	}
 	

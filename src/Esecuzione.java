@@ -24,7 +24,7 @@ public class Esecuzione {
 		Colore c1 = new Colore(255,0,0); //rosso
 		Forma f1 = new Rettangolo(c1, 2, 3);
 		Forma f2 = new Quadrato(c1, 5);
-		Immagine img = new ImmagineVettoriale();
+		Printable img = new ImmagineVettoriale();
 //		
 		((ImmagineVettoriale)img).aggiungiForma(f1);
 		((ImmagineVettoriale)img).aggiungiForma(f2);
@@ -39,8 +39,8 @@ public class Esecuzione {
 		Pixel p3 = new Pixel(c3);
 		Pixel p4 = new Pixel(c1);
 		
-		Immagine img1 = new ImmagineRuster(2,2);
-		Immagine img2 = new ImmagineRuster(2,2);
+		Printable img1 = new ImmagineRuster(2,2);
+		Printable img2 = new ImmagineRuster(2,2);
 		System.out.println(((ImmagineRuster)img1).aggiungiPixel(p1));
 		System.out.println(((ImmagineRuster)img1).aggiungiPixel(p2));
 		System.out.println(((ImmagineRuster)img1).aggiungiPixel(p2));

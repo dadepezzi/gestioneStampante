@@ -2,7 +2,7 @@ package immagine;
 
 import colore.Colore;
 
-public class ImmagineRuster extends Immagine{
+public class ImmagineRuster extends Printable{
 	
 	private Pixel[][] matPixel;
 	private int altezza, larghezza;
