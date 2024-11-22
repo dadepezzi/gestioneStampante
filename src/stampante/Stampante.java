@@ -2,6 +2,7 @@ package stampante;
 import java.util.HashMap;
 import java.util.Map;
 
+//caio-
 import colore.Colore;
 import colore.Colour;
 import immagine.*;
