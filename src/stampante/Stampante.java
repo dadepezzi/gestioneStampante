@@ -8,6 +8,7 @@ import immagine.*;
 
 public class Stampante {
 	//ciao
+	//ciao 3
 	
 	private Map<Colour, Cartuccia> mappaCartucce = new HashMap<>();
 	private Cartuccia[] arrayDiCartucce; 
