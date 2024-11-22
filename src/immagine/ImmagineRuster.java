@@ -70,7 +70,9 @@ public class ImmagineRuster implements Printable{
 	public void stampa() {
 		for(int i=0; i<altezza; i++) 
 			for(int j=0; j<larghezza; j++) {
+				
 				System.out.println("stampo pixel in posizione ("+i+","+j+") di colore RGB("+matPixel[i][j].getColore().getRed()+","+matPixel[i][j].getColore().getGreen()+","+matPixel[i][j].getColore().getBlue()+")");
+			
 			}
 	}
 	
