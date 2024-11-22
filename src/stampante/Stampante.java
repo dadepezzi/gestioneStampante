@@ -4,15 +4,16 @@ import java.util.Map;
 
 import colore.Colore;
 import colore.Colour;
+import eccezione.CartucciaEsaurita;
 import immagine.*;
 
 public class Stampante {
 	
 	private Map<Colour, Cartuccia> mappaCartucce = new HashMap<>();
-	private final Colore ROSSO = new Colore(255,0,0);
-	private final Colore VERDE = new Colore(0,255,0);
-	private final Colore BLU = new Colore(0,0,255);
-	
+//	private final Colore ROSSO = new Colore(255,0,0);
+//	private final Colore VERDE = new Colore(0,255,0);
+//	private final Colore BLU = new Colore(0,0,255);
+//	
 	public Stampante() {
 		
 	}
@@ -37,12 +38,20 @@ public class Stampante {
 		
 		//se non ho eccezione allora faccio printable.stampa()
 		
+		double consumoRosso = img.getConsumoByColore(Colour.ROSSO);
+		double consumoVerde = img.getConsumoByColore(Colour.VERDE);
+		double consumoBlu = img.getConsumoByColore(Colour.BLU);
 		
-//		img.areaColoreConsumata();
-//		arrayDiCartucce[0].consumaCartuccia(img.getArea(ROSSO));
-//		arrayDiCartucce[1].consumaCartuccia(img.getArea(VERDE)); //non va bene INCAPSULAMENTO
-//		arrayDiCartucce[2].consumaCartuccia(img.getArea(BLU));
-		
+		try {
+			mappaCartucce.get(Colour.ROSSO).consumaCartuccia(consumoRosso);
+			mappaCartucce.get(Colour.VERDE).consumaCartuccia(consumoVerde);
+			mappaCartucce.get(Colour.BLU).consumaCartuccia(consumoBlu);
+		} catch(CartucciaEsaurita e) { //eccezione: cartucciaEsaurita
+			//chiamo metodo sostituisci cartuccia
+			//chi ha lanciato l'eccezione??
+	
+		}
+		img.stampa();
 	}
 	
 	public void sostituisciCartuccia(Colour e, Cartuccia c) {

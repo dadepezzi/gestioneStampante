@@ -36,6 +36,11 @@ public class Rettangolo extends Forma {
 	public double calcolaArea() {
 		return base*altezza;
 	}
+
+	@Override
+	public String identita() {
+		return "rettangolo";
+	}
 	
 	
 }

@@ -20,19 +20,19 @@ public class ImmagineRuster implements Printable{
 	
 	public boolean aggiungiPixel(Pixel p) {
 		
-		if(countRiga == larghezza) {
+		if(countColonna == larghezza) {
 			//controllo se ho raggiunto la fine della riga
-			countColonna ++;
-			countRiga = 0;
+			countColonna = 0;
+			countRiga ++;
 			
-			if(countColonna == altezza) {
+			if(countRiga == altezza) {
 				//esaurito la matrice
 				return false;
 			}
 		}
 
 		matPixel[countRiga][countColonna] = p;
-		countRiga ++;
+		countColonna ++;
 		
 		return true;
 	}

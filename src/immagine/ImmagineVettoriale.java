@@ -53,7 +53,7 @@ public class ImmagineVettoriale implements Printable {
 	public void stampa() {
 		
 		for(int i=0; i<numForme; i++) {
-			System.out.println("sto stampando...");
+			System.out.println("sto stampando un "+arrayForme[i].identita());
 		}
 		
 	}

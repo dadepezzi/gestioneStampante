@@ -27,5 +27,10 @@ public class Cerchio extends Forma {
 		return Math.PI * raggio*raggio;
 	}
 
+	@Override
+	public String identita() {
+		return "cerchio";
+	}
+
 	 
 }

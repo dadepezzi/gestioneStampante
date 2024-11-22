@@ -1,6 +1,7 @@
 package stampante;
 
 import colore.Colore;
+import eccezione.CartucciaEsaurita;
 
 public class Cartuccia {
 	private Colore colore;
@@ -20,7 +21,10 @@ public class Cartuccia {
 		this.colore = colore;
 	}
 
-	public void consumaCartuccia(double consumo) { //lancio eccezione se finisco colore
+	public void consumaCartuccia(double consumo) throws CartucciaEsaurita { //lancio eccezione se finisco colore
+		if(areaResidua < consumo) {
+			throw new CartucciaEsaurita();
+		}
 		areaResidua -= consumo;
 	}
 	

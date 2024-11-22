@@ -28,6 +28,11 @@ public class Quadrato extends Forma {
 	public double calcolaArea() {
 		return lato*lato;
 	}
+
+	@Override
+	public String identita() {
+		return "quadrato";
+	}
 	
 	
 }

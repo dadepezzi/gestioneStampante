@@ -17,5 +17,5 @@ public abstract class Forma implements Measurable {
 		this.colore = colore;
 	}
 	
-	
+	public abstract String identita();
 }
