@@ -2,27 +2,19 @@ package stampante;
 import java.util.HashMap;
 import java.util.Map;
 
-//caio-
 import colore.Colore;
 import colore.Colour;
 import immagine.*;
 
 public class Stampante {
-	//ciao
-	//ciao 3
-	
-	///fanculo :-)
 	
 	private Map<Colour, Cartuccia> mappaCartucce = new HashMap<>();
-	private Cartuccia[] arrayDiCartucce; 
-	private int currentCartuccia;
 	private final Colore ROSSO = new Colore(255,0,0);
 	private final Colore VERDE = new Colore(0,255,0);
 	private final Colore BLU = new Colore(0,0,255);
 	
 	public Stampante() {
-		arrayDiCartucce = new Cartuccia[3];
-		currentCartuccia = 0;
+		
 	}
 	
 	public void aggiungiCartuccia(Colour e, Cartuccia c) {

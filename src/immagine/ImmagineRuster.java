@@ -1,8 +1,9 @@
 package immagine;
 
 import colore.Colore;
+import colore.Colour;
 
-public class ImmagineRuster extends Printable{
+public class ImmagineRuster implements Printable{
 	
 	private Pixel[][] matPixel;
 	private int altezza, larghezza;
@@ -36,27 +37,41 @@ public class ImmagineRuster extends Printable{
 		return true;
 	}
 
+
 	@Override
-	public void areaColoreConsumata() {
-		//HP: area di un pixel = 1
-			
-		for(int i=0; i<altezza; i++) {
+	public double getConsumoByColore(Colour e) {
+		double area=0;
+		
+		for(int i=0; i<altezza; i++) 
 			for(int j=0; j<larghezza; j++) {
 				
 				Colore colorePixel = matPixel[i][j].getColore();
 				
-				double percRed = ((double)colorePixel.getRed()) /255; 
-				double percGreen = ((double)colorePixel.getGreen()) /255;
-				double percBlue = ((double)colorePixel.getBlue()) /255;
-				
-				areaColore[0] += percRed;
-				areaColore[1] += percGreen;
-				areaColore[2] += percBlue;
-				
+				switch(e) {
+				case ROSSO:
+					area += (double)colorePixel.getRed() / 255;
+					break;
+				case VERDE:
+					area += (double)colorePixel.getGreen() / 255;
+					break;
+				case BLU:
+					area += (double)colorePixel.getBlue() / 255;
+					break;
+				default:
+					break;
+			
+				}		
 			}
-		
-		}
-		
+			
+		return area;
+	}
+
+	@Override
+	public void stampa() {
+		for(int i=0; i<altezza; i++) 
+			for(int j=0; j<larghezza; j++) {
+				System.out.println("stampo pixel in posizione ("+i+","+j+") di colore RGB("+matPixel[i][j].getColore().getRed()+","+matPixel[i][j].getColore().getGreen()+","+matPixel[i][j].getColore().getBlue()+")");
+			}
 	}
 	
 }
