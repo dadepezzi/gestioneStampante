@@ -11,6 +11,8 @@ public class Stampante {
 	//ciao
 	//ciao 3
 	
+	///fanculo :-)
+	
 	private Map<Colour, Cartuccia> mappaCartucce = new HashMap<>();
 	private Cartuccia[] arrayDiCartucce; 
 	private int currentCartuccia;
