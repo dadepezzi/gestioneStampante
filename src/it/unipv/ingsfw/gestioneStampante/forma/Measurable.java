@@ -1,4 +1,4 @@
-package forma;
+package it.unipv.ingsfw.gestioneStampante.forma;
 
 public interface Measurable {
 	

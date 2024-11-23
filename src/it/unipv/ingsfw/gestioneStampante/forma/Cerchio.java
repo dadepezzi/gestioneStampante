@@ -1,12 +1,18 @@
-package forma;
+package it.unipv.ingsfw.gestioneStampante.forma;
+
+import it.unipv.ingsfw.gestioneStampante.colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.eccezione.DimensioneNegativa;
 
 public class Cerchio extends Forma {
 
 	private double raggio;
 	
-	public Cerchio(colore.Colore colore,double raggio) {
+	public Cerchio(Colore colore,double raggio) throws DimensioneNegativa {
 		super(colore);
-		this.raggio = raggio;
+		if(raggio >= 0)
+			this.raggio = raggio;
+		else
+			throw new DimensioneNegativa();
 	}
 
 	public double getRaggio() {
@@ -14,6 +20,7 @@ public class Cerchio extends Forma {
 	}
 
 	public void setRaggio(double raggio) {
+		
 		this.raggio = raggio;
 	}
 

@@ -1,21 +1,22 @@
-package forma;
+package it.unipv.ingsfw.gestioneStampante.forma;
 
-import colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.colore.Colore;
 
 public abstract class Forma implements Measurable {
-	private colore.Colore colore;
+	private Colore colore;
 
 	public Forma(Colore colore) {
 		this.colore = colore;
 	}
 
-	public colore.Colore getColore() {
+	public Colore getColore() {
 		return colore;
 	}
 
-	public void setColore(colore.Colore colore) {
+	public void setColore(Colore colore) {
 		this.colore = colore;
 	}
 	
 	public abstract String identita();
+	
 }

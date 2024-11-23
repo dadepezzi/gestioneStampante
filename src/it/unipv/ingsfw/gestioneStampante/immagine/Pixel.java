@@ -1,6 +1,6 @@
-package immagine;
+package it.unipv.ingsfw.gestioneStampante.immagine;
 
-import colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.colore.Colore;
 
 public class Pixel {
 	Colore colore;

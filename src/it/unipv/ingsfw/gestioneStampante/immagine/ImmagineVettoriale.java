@@ -1,7 +1,7 @@
-package immagine;
-import colore.Colore;
-import colore.Colour;
-import forma.Forma;
+package it.unipv.ingsfw.gestioneStampante.immagine;
+import it.unipv.ingsfw.gestioneStampante.colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.colore.Colour;
+import it.unipv.ingsfw.gestioneStampante.forma.Forma;
 
 public class ImmagineVettoriale implements Printable {
 	
@@ -17,6 +17,7 @@ public class ImmagineVettoriale implements Printable {
 	}
 	
 	public void aggiungiForma(Forma forma) {
+		
 		arrayForme[numForme] = forma;
 		numForme ++;
 	}

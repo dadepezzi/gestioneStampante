@@ -1,14 +1,18 @@
-package forma;
+package it.unipv.ingsfw.gestioneStampante.forma;
 
-import colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.eccezione.DimensioneNegativa;
 
 public class Quadrato extends Forma {
 	
 	private double lato;
 
-	public Quadrato(Colore rgb, double lato) {
+	public Quadrato(Colore rgb, double lato) throws DimensioneNegativa {
 		super(rgb);
-		this.lato = lato;
+		if(lato >= 0)
+			this.lato = lato;
+		else
+			throw new DimensioneNegativa();
 	}
 
 	public double getLato() {

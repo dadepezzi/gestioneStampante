@@ -1,4 +1,4 @@
-package colore;
+package it.unipv.ingsfw.gestioneStampante.colore;
 
 public class Colore {
 	private int red,green,blue;

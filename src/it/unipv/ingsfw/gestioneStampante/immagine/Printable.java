@@ -1,6 +1,6 @@
-package immagine;
+package it.unipv.ingsfw.gestioneStampante.immagine;
 
-import colore.Colour;
+import it.unipv.ingsfw.gestioneStampante.colore.Colour;
 
 public interface Printable {
 	

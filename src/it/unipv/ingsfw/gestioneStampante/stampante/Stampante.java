@@ -1,19 +1,16 @@
-package stampante;
+package it.unipv.ingsfw.gestioneStampante.stampante;
 import java.util.HashMap;
 import java.util.Map;
 
-import colore.Colore;
-import colore.Colour;
-import eccezione.CartucciaEsaurita;
-import immagine.*;
+import it.unipv.ingsfw.gestioneStampante.colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.colore.Colour;
+import it.unipv.ingsfw.gestioneStampante.eccezione.CartucciaEsaurita;
+import it.unipv.ingsfw.gestioneStampante.immagine.*;
 
 public class Stampante {
 	
 	private Map<Colour, Cartuccia> mappaCartucce = new HashMap<>();
-//	private final Colore ROSSO = new Colore(255,0,0);
-//	private final Colore VERDE = new Colore(0,255,0);
-//	private final Colore BLU = new Colore(0,0,255);
-//	
+	
 	public Stampante() {
 		
 	}
@@ -37,7 +34,7 @@ public class Stampante {
 		//qui ho try catch che se cartuccia aveva fatto eccezione chiamo cambia cartuccia
 		
 		//se non ho eccezione allora faccio printable.stampa()
-		
+		boolean out = true;
 		double consumoRosso = img.getConsumoByColore(Colour.ROSSO);
 		double consumoVerde = img.getConsumoByColore(Colour.VERDE);
 		double consumoBlu = img.getConsumoByColore(Colour.BLU);
@@ -47,14 +44,35 @@ public class Stampante {
 			mappaCartucce.get(Colour.VERDE).consumaCartuccia(consumoVerde);
 			mappaCartucce.get(Colour.BLU).consumaCartuccia(consumoBlu);
 		} catch(CartucciaEsaurita e) { //eccezione: cartucciaEsaurita
-			//chiamo metodo sostituisci cartuccia
-			//chi ha lanciato l'eccezione??
-	
+			
+			switch(e.getCartucciaEsaurita()) {
+			case ROSSO:
+				sostituisciCartuccia(new Cartuccia(Colour.ROSSO));
+				System.out.println("sostituita cartuccia rossa...");
+				out = false;
+				break;
+			case VERDE:
+				sostituisciCartuccia(new Cartuccia(Colour.VERDE));
+				System.out.println("sostituita cartuccia verde...");
+				out = false;
+				break;
+			case BLU:
+				sostituisciCartuccia(new Cartuccia(Colour.BLU));
+				System.out.println("sostituita cartuccia blu...");
+				out = false;
+				break;
+			default:
+				break;
+			}
 		}
-		img.stampa();
+		
+		if(out) 
+			img.stampa();
+		else
+			System.out.println("Stampa non andata a buon fine! ");
 	}
 	
-	public void sostituisciCartuccia(Colour e, Cartuccia c) {
-		mappaCartucce.put(e,c);
+	private void sostituisciCartuccia(Cartuccia c) {
+		mappaCartucce.put(c.getColore(),c);
 	}
 }

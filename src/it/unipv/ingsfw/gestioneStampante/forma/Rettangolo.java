@@ -1,14 +1,20 @@
-package forma;
+package it.unipv.ingsfw.gestioneStampante.forma;
 
-import colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.colore.Colore;
+import it.unipv.ingsfw.gestioneStampante.eccezione.DimensioneNegativa;
 
 public class Rettangolo extends Forma {
 	double base, altezza;
 
-	public Rettangolo(Colore rgb, double base, double altezza) {
+	public Rettangolo(Colore rgb, double base, double altezza) throws DimensioneNegativa {
 		super(rgb);
-		this.base = base;
-		this.altezza = altezza;
+		if(base >= 0 && altezza >= 0) {
+			this.base = base;
+			this.altezza = altezza;
+		}
+		else
+			throw new DimensioneNegativa();
+
 	}
 
 	public double getBase() {
