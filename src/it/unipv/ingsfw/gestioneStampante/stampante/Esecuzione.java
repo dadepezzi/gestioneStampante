@@ -17,7 +17,7 @@ public class Esecuzione {
 		
 		
 		
-		Colore c1 = new Colore(200,100,0); //rosso
+		Colore c1 = new Colore(200,100,0);
 		Colore c2 = new Colore(10,255,0);
 		Colore c3 = new Colore(0,0,255); 
 	
