@@ -7,7 +7,6 @@ public class Esecuzione {
 	public static void main(String[] args) throws DimensioneNegativa{
 		
 		Stampante s = new Stampante();
-//		Colore viola = new Colore(255,0,255);
 		Cartuccia car1 = new Cartuccia(Colour.ROSSO,100);
 		Cartuccia car2 = new Cartuccia(Colour.VERDE,100);
 		Cartuccia car3 = new Cartuccia(Colour.BLU,100);
